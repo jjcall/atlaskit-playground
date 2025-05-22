@@ -3,3 +3,9 @@ description:
 globs:
 alwaysApply: false
 ---
+# Component Request Guidance
+
+Use correct imports and props for @atlaskit components.
+Refer to Context7 docs when unsure.
+Use design tokens for color, spacing and layout.
+No raw CSS or inline styles unless necessary.

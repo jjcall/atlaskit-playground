@@ -43,14 +43,15 @@ npm run dev
 
 ```
 .
-├── src/
-│   ├── App.tsx           # Sample UI with Atlaskit
-│   ├── main.tsx          # App entrypoint
-│
 ├── .cursor/
 │   └── rules/
 │       ├── always-on.mdc # Rules to prefer Atlaskit components
 │       └── request.mdc   # Prompt-specific rules
+│
+├── src/
+│   ├── App.tsx           # Sample UI with Atlaskit
+│   ├── main.tsx          # App entrypoint
+│
 │
 ├── index.html            # Mounts the app to #root
 ├── vite.config.ts
