@@ -1,0 +1,11 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Prefer Atlaskit Components
+
+When writing React code, prefer @atlaskit components over raw HTML.
+Use `Button`, `Box`, `Stack`, etc.
+Style with `xcss` and `@atlaskit/tokens`.
+Always wrap in `AppProvider`.

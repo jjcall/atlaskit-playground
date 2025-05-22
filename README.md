@@ -1,54 +1,131 @@
-# React + TypeScript + Vite
+# Atlaskit Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal local prototyping environment for building interfaces with the [Atlassian Design System](https://atlassian.design/) using **Vite**, **React**, and **Cursor**.
 
-Currently, two official plugins are available:
+This project is optimized for:
+- ⚡ Fast iteration with Hot Module Reloading (HMR)
+- 🎨 Atlaskit components and design tokens
+- 🤖 AI-assisted development with Cursor and Context7
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Vite](https://vitejs.dev/) — blazing-fast dev server
+- [React 18](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Atlassian Design System](https://atlassian.design/)
+- [Atlaskit Components](https://atlaskit.atlassian.com/)
+- [Cursor](https://cursor.sh/) + [Context7](https://context7.com/) integration
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🚀 Getting Started
+
+1. **Install dependencies** (make sure you're using React 18):
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. **Start the local dev server**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+3. Open your browser:
+[http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🧱 Project Structure
+
+```
+.
+├── src/
+│   ├── App.tsx           # Sample UI with Atlaskit
+│   ├── main.tsx          # App entrypoint
+│
+├── .cursor/
+│   └── rules/
+│       ├── always-on.mdc # Rules to prefer Atlaskit components
+│       └── request.mdc   # Prompt-specific rules
+│
+├── index.html            # Mounts the app to #root
+├── vite.config.ts
+├── package.json
+└── README.md
+```
+
+---
+
+## ✨ Styling with `xcss`
+
+Use `xcss` from `@atlaskit/primitives` to apply design token-based styles:
+
+```tsx
+const card = xcss({
+  padding: 'space.200',
+  backgroundColor: 'elevation.surface',
+  borderRadius: 'border.radius.200',
+});
+```
+
+Apply to any primitive:
+
+```tsx
+<Box xcss={card}>Token-powered styling</Box>
+```
+
+---
+
+## 🤖 Cursor Tips
+
+- Use the `request.mdc` rule to tell Cursor to always use AtlasKit components
+- Your Context7 instance should be linked to this repo’s markdown docs (if added)
+- Prompt clearly with:
+  > “Use Atlaskit Button, use `xcss`, wrap in `AppProvider`”
+
+---
+
+## 📦 Install more components
+
+You can add more UI kits as needed:
+
+```bash
+npm install @atlaskit/tag @atlaskit/modal-dialog @atlaskit/form
+```
+
+---
+
+## ✅ Requirements
+
+- Node.js 18+
+- React 18 (❌ not React 19 yet)
+- Cursor editor (optional but ideal)
+
+---
+
+## 🧪 Example UI Elements
+
+```tsx
+<Button appearance="primary">Save</Button>
+<Tag text="Beta" />
+```
+
+---
+
+## 🧭 Roadmap / Ideas
+
+- [ ] Add view templates
+- [ ] Auto-import AtlasKit tokens
+- [ ] Custom code snippets for Context7
+
+---
+
+## 🧡 Credits
+
+Built Jason Calleiro for Atlassian internal prototyping and Cursor-assisted exploration. Use it to test ideas fast, with real UI.
+
+---
