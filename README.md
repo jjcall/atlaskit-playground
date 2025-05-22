@@ -25,13 +25,14 @@ This project is optimized for:
 1. **Install dependencies** (make sure you're using React 18):
 
 ```bash
-npm install
+yarn install
+yarn dev
 ```
 
 2. **Start the local dev server**
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 3. Open your browser:
@@ -75,7 +76,7 @@ npm run dev
 You can add more UI kits as needed:
 
 ```bash
-npm install @atlaskit/tag @atlaskit/modal-dialog @atlaskit/form
+yarn add @atlaskit/tag @atlaskit/modal-dialog @atlaskit/form
 ```
 
 ---
