@@ -1,230 +1,143 @@
-# Atlaskit Blank Canvas
+# Atlaskit Playground
 
-A minimal blank slate for building Atlassian Design System prototypes.
+A minimal boilerplate for building Atlassian Design System prototypes.
 
-## Features
+## 🚀 Features
 
-- 🚀 Vite for fast development
-- 🎨 Minimal Atlaskit setup with design tokens
-- 📱 Ready for responsive layouts
-- 🔧 TypeScript for type safety
+- Fast development with Vite
+- Preconfigured Atlassian design tokens and CSS reset
+- Essential Atlaskit primitives for responsive layouts (Box, Stack, Inline)
+- TypeScript for improved developer experience
+- Cursor + Context7 integration for AI-assisted development
 
-## Quick Start
+## 🧭 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- React 18
+
+### Installation
 
 ```bash
-# Install dependencies
-yarn install
+# Using npm
+npm install --legacy-peer-deps
 
-# Start development server
-yarn dev
+# Using yarn
+yarn install
 ```
 
-Visit `http://localhost:5173` to see your app.
+### Development
 
-## Available Scripts
+```bash
+# Start the development server
+yarn dev
+# or
+npm run dev
+```
+
+Visit `http://localhost:3000` to see your app.
+
+### Scripts
 
 - `yarn dev` - Start development server
 - `yarn build` - Build for production
-- `yarn preview` - Preview production build locally
+- `yarn preview` - Preview production build
 
-## Resources
-
-- [Atlassian Design System](https://atlassian.design)
-- [Atlaskit Component Library](https://atlassian.design/components)
-- [Design Tokens Documentation](https://atlassian.design/foundations/design-tokens)
-
-## Project Structure
+## 📂 Project Structure
 
 ```
-src/
-├── components/     # Reusable components
-├── layouts/        # Layout components
-├── pages/         # Page components
-├── styles/        # Global styles
-├── App.tsx        # Main App component
-└── main.tsx       # Application entry point
+.
+├── src/
+│   ├── App.tsx          # Main App component with Atlaskit showcase
+│   ├── main.tsx         # Application entry point with CSS reset
+│   └── assets/          # Static assets used in the source code
+│
+├── public/
+│   ├── images/          # Public image assets including favicons
+│
+├── .cursor/
+│   └── rules/           # Cursor AI assistant rules
+│       ├── always-on.mdc # Rules to prefer Atlaskit components
+│       └── request.mdc   # Prompt-specific rules
+│
+├── index.html           # HTML entry point
+├── vite.config.ts       # Vite configuration
+├── tsconfig.json        # TypeScript configuration
+└── package.json         # Dependencies and scripts
 ```
 
-## Pre-installed Atlaskit Components
+## 🎨 Atlaskit Components
 
-This boilerplate comes with essential Atlaskit components:
+This project comes with essential Atlaskit components pre-installed:
 
-- 🎨 Design Tokens & CSS Reset
-- 📦 Primitives (Box, Stack, Inline)
-- 🔘 Button
-- 📝 Typography (Heading, Text)
-- 🖼️ Logo
-- And more...
+- Design Tokens & CSS Reset
+- Layout Primitives (Box, Stack, Inline)
+- Button
+- Typography (Heading, Text)
+- Logo
+- And many more (see package.json for the full list)
 
-## Adding More Components
-
-To add more Atlaskit components, install them from npm:
+### Adding More Components
 
 ```bash
+# Using npm
+npm install --legacy-peer-deps @atlaskit/[component-name]
+
+# Using yarn
 yarn add @atlaskit/[component-name]
+
+# AI assited installation
+# If using cursor / windsurf, it will attempt to install componented its identified in your prompt or design.
 ```
 
-## Best Practices
+## 💻 Best Practices
 
-1. Use Atlaskit primitives for layouts:
+1. **Use Atlaskit primitives for layouts:** (Guidance is in Cursor rules)
    - `Box` for containers
    - `Stack` for vertical layouts
    - `Inline` for horizontal layouts
 
-2. Follow Atlaskit's design tokens for consistency:
+2. **Follow Atlaskit's design tokens for consistency:** (Guidance is in Cursor rules)
    - Colors: `var(--ds-*)`
    - Spacing: `var(--ds-space-*)`
    - Typography: `var(--ds-font-*)`
+   - Border radius: `var(--ds-border-radius-*)`
 
-3. Leverage Atlaskit's built-in responsive design capabilities
+3. **Leverage Emotion for custom styling:**
+   ```tsx
+   /** @jsxImportSource @emotion/react */
+   import { css } from '@emotion/react';
 
-## Contributing
+   // Use it in your component
+   <div css={css`color: var(--ds-text);`}>Content</div>
+   ```
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 🤖 Cursor AI Tips
+
+- Use the Cursor editor for AI-assisted development
+- Install [Context7](https://github.com/upstash/context7): Direct access to AI friendly documentation. add `use Context7` to prompts
+- Install [Figma MCP](https://github.com/GLips/Figma-Context-MCP): Processes figma destails and file design metadata
+- Reference the `request.mdc` rule to ensure Cursor suggests Atlaskit components
+- Try prompts like: "Use Atlaskit Button, use Context7."
+
+## 📚 Resources
+
+- [Atlassian Design System](https://atlassian.design)
+- [Atlaskit Component Library](https://atlassian.design/components)
+- [Design Tokens Documentation](https://atlassian.design/foundations/design-tokens)
+- [Vite Documentation](https://vitejs.dev/)
+- [Figma MCP](https://github.com/GLips/Figma-Context-MCP)
+- [Context7](https://github.com/upstash/context7)
+- [Cursor](https://cursor.sh/)
+- [React 18](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## 🧡 Credits
+
+Built by [Jason Calleiro](https://www.linkedin.com/in/jasoncalleiro/) for Atlassian internal prototyping and Cursor-assisted exploration.
 
 ## License
 
 MIT License - feel free to use this boilerplate for your projects.
-
----
-
-## 🧰 Tech Stack
-
-- [Vite](https://vitejs.dev/) — blazing-fast dev server
-- [React 18](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Atlassian Design System](https://atlassian.design/)
-- [Atlaskit Components](https://atlaskit.atlassian.com/)
-- [Cursor](https://cursor.sh/) + [Context7](https://context7.com/) integration
-
----
-
-## 🚀 Getting Started
-
-1. **Install dependencies** (make sure you're using React 18):
-
-Using npm:
-```bash
-npm install --legacy-peer-deps
-```
-
-Or using yarn:
-```bash
-yarn install
-```
-
-2. **Start the local dev server**
-
-Using npm:
-```bash
-npm run dev
-```
-
-Or using yarn:
-```bash
-yarn dev
-```
-
-3. Open your browser:
-[http://localhost:3000](http://localhost:3000)
-
----
-
-## 🧱 Project Structure
-
-```
-.
-├── .cursor/
-│   └── rules/
-│       ├── always-on.mdc # Rules to prefer Atlaskit components
-│       └── request.mdc   # Prompt-specific rules
-│
-├── src/
-│   ├── App.tsx          # Sample UI with Atlaskit components
-│   ├── main.tsx         # App entrypoint with CSS reset
-│
-├── public/              # Static assets
-├── index.html          # Mounts the app to #root
-├── vite.config.ts      # Vite configuration
-├── tsconfig.json       # TypeScript configuration
-├── package.json        # Dependencies and scripts
-└── README.md
-```
-
----
-
-## 🤖 Cursor Tips
-
-- Use the `request.mdc` rule to tell Cursor to always use AtlasKit components
-- Your Context7 instance should be linked to this repo's markdown docs (if added)
-- Prompt clearly with:
-  > "Use Atlaskit Button, use `css`, wrap in components. use Context7"
-
----
-
-## 📦 Install more components
-
-You can add more UI kits as needed:
-
-```bash
-# Using npm
-npm install --legacy-peer-deps @atlaskit/tag @atlaskit/modal-dialog @atlaskit/form
-
-# Using yarn
-yarn add @atlaskit/tag @atlaskit/modal-dialog @atlaskit/form
-```
-
----
-
-## ✅ Requirements
-
-- Node.js 18+
-- React 18 (❌ not React 19 yet)
-- Cursor editor (optional but ideal)
-
----
-
-## 🧪 Example UI Elements
-
-```tsx
-// Basic components
-<Button appearance="primary">Save</Button>
-<Heading level="h1">Welcome</Heading>
-
-// Layout components
-<Stack space="space.200">
-  <Inline space="space.100">
-    <Button>Cancel</Button>
-    <Button appearance="primary">Submit</Button>
-  </Inline>
-</Stack>
-
-// Tabs example
-<Tabs>
-  <TabList>
-    <Tab>First Tab</Tab>
-    <Tab>Second Tab</Tab>
-  </TabList>
-  <TabPanel>First panel content</TabPanel>
-  <TabPanel>Second panel content</TabPanel>
-</Tabs>
-```
-
----
-
-## 🧭 Roadmap / Ideas
-
-- [ ] Add view templates
-- [ ] Auto-import AtlasKit tokens
-- [ ] Custom code snippets for Context7
-- [ ] Add more component examples
-- [ ] Add testing setup
-- [ ] Add GitHub Actions workflow
-
----
-
-## 🧡 Credits
-
-Built by Jason Calleiro for Atlassian internal prototyping and Cursor-assisted exploration. Use it to test ideas fast, with real UI.
-
----
