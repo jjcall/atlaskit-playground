@@ -91,29 +91,6 @@ yarn add @atlaskit/[component-name]
 # If using cursor / windsurf, it will attempt to install componented its identified in your prompt or design.
 ```
 
-## 💻 Best Practices
-
-1. **Use Atlaskit primitives for layouts:** (Guidance is in Cursor rules)
-   - `Box` for containers
-   - `Stack` for vertical layouts
-   - `Inline` for horizontal layouts
-
-2. **Follow Atlaskit's design tokens for consistency:** (Guidance is in Cursor rules)
-   - Colors: `var(--ds-*)`
-   - Spacing: `var(--ds-space-*)`
-   - Typography: `var(--ds-font-*)`
-   - Border radius: `var(--ds-border-radius-*)`
-
-3. **Leverage Emotion for custom styling:**
-   ```tsx
-   /** @jsxImportSource @emotion/react */
-   import { css } from '@emotion/react';
-
-   // Use it in your component
-   <div css={css`color: var(--ds-text);`}>Content</div>
-   ```
-
-
 ## 🤖 Cursor AI Tips
 
 - Use the Cursor editor for AI-assisted development
