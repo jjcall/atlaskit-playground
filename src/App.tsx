@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '@atlaskit/button/new';
 import { Box, xcss } from '@atlaskit/primitives';
 
