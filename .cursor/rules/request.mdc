@@ -3,9 +3,44 @@ description:
 globs:
 alwaysApply: false
 ---
-# Component Request Guidance
+### 🧩 Component Matching
 
-Use correct imports and props for @atlaskit components.
-Refer to Context7 docs when unsure.
-Use design tokens for color, spacing and layout.
-No raw CSS or inline styles unless necessary.
+- If the Figma component is named **Button**, **Primary Button**, or **Secondary Button**, map to:
+  `@atlaskit/button/new`
+  - Use `appearance="primary"` or `appearance="subtle"` if the name includes "Primary" or "Secondary"
+- If the Figma component is named **Text**, **Heading**, **Label**, or similar, use:
+  `Text` or `Heading` from `@atlaskit/typography` (or use `<p>` if not available)
+- If the component is named **Checkbox**, **Radio**, or **Toggle**, map to:
+  `@atlaskit/checkbox`, `@atlaskit/radio`, or `@atlaskit/toggle`
+- If it's a **Select**, **Dropdown**, or **Combobox**, map to:
+  `@atlaskit/select`
+- If it’s a **Date picker** or **Time picker**, map to:
+  `@atlaskit/datetime-picker`
+- If it’s a **Tooltip**, map to:
+  `@atlaskit/tooltip`
+- If it’s a **Modal**, **Dialog**, or **Popup**, map to:
+  `@atlaskit/modal-dialog`
+- If it’s a **Form**, prefer layout primitives like `Stack` and use proper inputs like `TextField`, `Checkbox`, etc.
+- If it’s an **Avatar**, **Badge**, or **Tag**, use:
+  `@atlaskit/avatar`, `@atlaskit/badge`, `@atlaskit/tag`
+- If it’s a layout like **Container**, **Stack**, **Row**, or **Grid**, use:
+  `Box`, `Stack`, `Inline` from `@atlaskit/primitives`
+- For **Icons**, use a matching icon from:
+  `@atlaskit/icon` or `@atlaskit/icon/glyph/*` — prefer existing glyphs, do not create new SVGs
+
+### 🎨 Tokens & Styling
+
+- Use `@atlaskit/css` for styles when working with Atlaskit components.
+- Use `token('space.400')` or other design tokens — do not hardcode colors, radii, spacing
+- Never use inline `style={{ ... }}` unless no Atlaskit or tokenized option exists
+
+### 🧱 Behavior
+
+- Do not create custom variants of Atlaskit components unless required
+- If a Figma component doesn’t map directly, describe it in code comments and render a placeholder
+
+### 🔄 Fallback
+
+If no match is found, fall back to using:
+- `<Box>` for layout
+- `<div>` as a last resort

@@ -7,5 +7,5 @@ alwaysApply: false
 
 When writing React code, prefer @atlaskit components over raw HTML.
 Use `Button`, `Box`, `Stack`, etc.
-Style with `xcss` and `@atlaskit/tokens`.
+Style with `@atlaskit/css` and `@atlaskit/tokens` when possible.
 Always wrap in `AppProvider`.
