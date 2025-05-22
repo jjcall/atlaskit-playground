@@ -61,26 +61,6 @@ npm run dev
 
 ---
 
-## ✨ Styling with `xcss`
-
-Use `xcss` from `@atlaskit/primitives` to apply design token-based styles:
-
-```tsx
-const card = xcss({
-  padding: 'space.200',
-  backgroundColor: 'elevation.surface',
-  borderRadius: 'border.radius.200',
-});
-```
-
-Apply to any primitive:
-
-```tsx
-<Box xcss={card}>Token-powered styling</Box>
-```
-
----
-
 ## 🤖 Cursor Tips
 
 - Use the `request.mdc` rule to tell Cursor to always use AtlasKit components
